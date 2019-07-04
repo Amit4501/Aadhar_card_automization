@@ -1,0 +1,25 @@
+hive
+<!---hive code--->
+
+CREATE TABLE adhar (Id int, Registrar string, EnrolmentAgency string, State string, District string, SubDistrict string, PinCode string, Gender string, Age string) 
+row format delimited fields terminated by ',';
+LOAD DATA LOCAL INPATH '/home/cloudera/Desktop/Aadhaar-project/hive/adhar.csv' OVERWRITE INTO TABLE adhar;
+SELECT * FROM adhar;
+describe formatted adhar;
+select Registrar, EnrolmentAgency,State,District,SubDistrict,PinCode,Gender,Age from adhar where Id = '6';
+select Id,Registrar, EnrolmentAgency,PinCode,Age from adhar where Gender = 'M';
+SELECT Registrar, EnrolmentAgency,State,District FROM adhar age LIMIT 10;
+SELECT Registrar, EnrolmentAgency,State,District FROM adhar Gender LIMIT 5;
+
+DROP TABLE IF EXISTS adhar; 
+exit;
+
+
+<!----Extra command--->
+
+
+
+
+
+
+
